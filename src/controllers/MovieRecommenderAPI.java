@@ -1,12 +1,15 @@
 package controllers;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import models.Movie;
 import models.Rating;
 import models.User;
+import utils.AlphabeticalComparator;
 import utils.Importer;
 import utils.Serializer;
 
@@ -109,6 +112,14 @@ public class MovieRecommenderAPI implements Recommender {
 	// Search movies by their ID
 	public Movie getMovieById(long movieId) {
 		return movieIndex.get(movieId);
+	}
+	
+	// Sort Movies by Title
+		public Collection<Movie> sortedByTitle() {
+			List<Movie> sortedByTitle = new ArrayList<Movie>(movieIndex.values());
+			Collections.sort(sortedByTitle, new AlphabeticalComparator());
+			
+			return sortedByTitle;
 	}
 
 	// Add new rating object for a user 

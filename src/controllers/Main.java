@@ -1,3 +1,4 @@
+
 package controllers;
 
 import java.io.File;
@@ -109,6 +110,13 @@ public class Main {
 		public String searchMovies(@Param(name="movieId:") long movieId){
 			movie = movRec.getMovieById(movieId);
 			return movie.toString();	
+		}
+		
+		@Command(description="Sort by Title")
+		public void sortedByTitle() {
+			for(Movie movie: movRec.sortedByTitle()) {
+				System.out.println(movie.title + " " + movie.releaseDate + " " + movie.imdb);
+			}
 		}
 		
 		@Command(description="Add a new rating")
