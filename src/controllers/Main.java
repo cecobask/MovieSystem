@@ -33,7 +33,7 @@ public class Main {
 		
 		public static void main(String[] args) throws Exception{
 			Main main = new Main();
-			Shell shell = ShellFactory.createConsoleShell("cliche> ", "Enter '?l' or '?list' to list all commands", main);
+			Shell shell = ShellFactory.createConsoleShell("cliche", "Enter '?l' or '?list' to list all commands", main);
 			shell.commandLoop();
 			main.movRec.write();
 		}
@@ -74,7 +74,9 @@ public class Main {
 		@Command(description="List all users")
 		public void listUsers(){
 			Collection<User> users = movRec.getUsers();
-			System.out.println(users);
+			for (User user: users) {
+				System.out.println(user);
+			}
 		}
 		
 		@Command(description="Search for a user by ID")
@@ -103,7 +105,9 @@ public class Main {
 		@Command(description="List all movies")
 		public void listMovies(){
 			Collection<Movie> movies = movRec.getMovies();
-			System.out.println(movies);
+			for (Movie movie: movies) {
+			System.out.println(movie);
+			}
 		}
 		
 		@Command(description="Search for a movie by ID")
@@ -135,7 +139,9 @@ public class Main {
 		@Command(description="List all ratings")
 		public void listRatings(){
 			Collection<Rating> ratings = movRec.getRatings();
-			System.out.println(ratings);
+			for(Rating rating: ratings) {
+				System.out.println(rating);
+			}
 		}
 		
 }
