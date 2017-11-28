@@ -6,10 +6,14 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.google.common.base.Optional;
+
 import models.Movie;
 import models.Rating;
 import models.User;
 import utils.AlphabeticalComparator;
+import utils.FileLogger;
 import utils.Importer;
 import utils.Serializer;
 
@@ -21,6 +25,7 @@ public class MovieRecommenderAPI implements Recommender {
 	public Map<Long, Movie> movieIndex = new HashMap<>();
 	public Map<Long, Rating> ratingIndex = new HashMap<>();
 	public Serializer serializer;
+	Optional<User> currentUser;
 
 	// Empty constructor for the API 
 	public MovieRecommenderAPI() {
@@ -49,8 +54,8 @@ public class MovieRecommenderAPI implements Recommender {
 	}
 
 	// Add a new user object
-	public User addUser(String firstName, String surname, int age, String gender, String job, String zip) {
-		User user = new User(firstName, surname, age, gender, job, zip);
+	public User addUser(String firstName, String surname, int age, String gender, String job, String zip, String password, String role) {
+		User user = new User(firstName, surname, age, gender, job, zip, password, role);
 		user.userId = userIndex.size() + 1l;
 		userIndex.put(user.userId, user);
 		return user;
@@ -139,5 +144,23 @@ public class MovieRecommenderAPI implements Recommender {
 	public Rating getRatingsById(long movieId) {
 		return ratingIndex.get(movieId);
 	}
+	
+	public boolean login(Long userId, String password) {
+	    Optional<User> user = Optional.fromNullable(userIndex.get(userId));
+	    if (user.isPresent() && user.get().password.equals(password)) {
+	      currentUser = user;
+	      FileLogger.getLogger().log("You're logged in as " + currentUser.get().userId);
+	      return true;
+	    }
+	    return false;
+	  }
+	
+	public void logout() {
+	    Optional<User> user = currentUser;
+	    if (user.isPresent()) {
+	      FileLogger.getLogger().log("User " + currentUser.get().userId + " just logged out...");
+	      currentUser = Optional.absent();
+	    }
+	  }
 
 }

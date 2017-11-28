@@ -622,6 +622,8 @@
                 <gender>M</gender>
                 <job>technician</job>
                 <zip>85711</zip>
+                <password>killer</password>
+                <role>default</role>
                 <ratings/>
               </models.User>
             </entry>
@@ -692,20 +694,8 @@
                 <gender>male</gender>
                 <job>customerAssistant</job>
                 <zip>x91v5w6</zip>
-                <ratings/>
-              </models.User>
-            </entry>
-            <entry>
-              <long>7</long>
-              <models.User>
-                <counter>2</counter>
-                <userId>7</userId>
-                <firstName>Tsvetoslav</firstName>
-                <surname>Dimov</surname>
-                <age>21</age>
-                <gender>male</gender>
-                <job>customerAssistant</job>
-                <zip>x91v5w6</zip>
+                <password>killer</password>
+                <role>admin</role>
                 <ratings/>
               </models.User>
             </entry>

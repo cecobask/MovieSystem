@@ -17,6 +17,8 @@ public class User {
 	public String gender;
 	public String job;
 	public String zip;
+	public String password;
+	public String role;
 	public List<Rating> ratings = new ArrayList<>();
 
 	
@@ -24,7 +26,7 @@ public class User {
 	}
 
 	// Constructor used by Cliche CLI for creating users
-	public User(String firstName, String surname, int age, String gender, String job, String zip) {
+	public User(String firstName, String surname, int age, String gender, String job, String zip, String password, String role) {
 		this.userId = counter++;
 		this.firstName = firstName;
 		this.surname = surname;
@@ -32,14 +34,13 @@ public class User {
 		this.gender = gender;
 		this.job = job;
 		this.zip = zip;
+		this.password=password;
+		this.role="default";
 	}
 	
 	// Constructor used when user is being imported by Importer
 	public User(Long userId, String firstName, String surname, int age, String gender, String job, String zip){
-		this.userId = userId;
-		if(userId >= counter){
-			counter = userId + 1;
-		}
+		this.userId = counter++;
 		this.firstName = firstName;
 		this.surname = surname;
 		this.age = age;
@@ -56,12 +57,14 @@ public class User {
 								   .addValue(gender)
 								   .addValue(job)
 								   .addValue(zip)
+								   .addValue(password)
+								   .addValue(role)
 								   .toString();
 	}
 	
 	@Override
 	public int hashCode(){
-		return Objects.hashCode(this.firstName, this.surname, this.age, this.gender, this.job, this.zip);
+		return Objects.hashCode(this.firstName, this.surname, this.age, this.gender, this.job, this.zip, this.password, this.role);
 	}
 	
 	@Override
@@ -74,6 +77,8 @@ public class User {
 					&& Objects.equal(gender, other.gender)
 					&& Objects.equal(job, other.job)
 					&& Objects.equal(zip, other.zip)
+					&& Objects.equal(password, other.password)
+					&& Objects.equal(role, other.role)
 					&& Objects.equal(ratings, other.ratings);
 		}else{
 			return false;
@@ -143,6 +148,22 @@ public class User {
 
 	public void setRatings(List<Rating> ratings) {
 		this.ratings = ratings;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 	
 }

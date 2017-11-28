@@ -12,7 +12,7 @@ public interface Recommender {
 	
 	public void write() throws Exception;
 
-	public User addUser(String firstName, String surname, int age, String gender, String job, String zip);
+	public User addUser(String firstName, String surname, int age, String gender, String job, String zip, String password, String role);
 	
 	public void removeUser(Long userId);
 	

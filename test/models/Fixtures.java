@@ -7,10 +7,10 @@ import models.User;
 public class Fixtures {
 	
 	public static User[] users = {
-			new User("Tsvetoslav", "Dimov", 21, "male", "customer assistant", "x91 v5w6"),
-			new User("Ivan", "Dimov", 42, "male", "engineer", "x91 v5w6"),
-			new User("Aleksandra", "Dimova", 8, "female", "student", "123ABC"),
-			new User("Geoff", "Lagadec", 45, "male", "singer", "666AVE")
+			new User("Tsvetoslav", "Dimov", 21, "male", "customer assistant", "x91 v5w6", "1234", "admin"),
+			new User("Ivan", "Dimov", 42, "male", "engineer", "x91 v5w6", "4321", "default"),
+			new User("Aleksandra", "Dimova", 8, "female", "student", "123ABC", "9876", "admin"),
+			new User("Geoff", "Lagadec", 45, "male", "singer", "666AVE", "6969", "fucker")
 	};
 	
 	public static Movie[] movies ={

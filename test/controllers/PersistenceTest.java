@@ -17,7 +17,7 @@ public class PersistenceTest {
 	
 	void generate(MovieRecommenderAPI movRec){
 		for(User user : users){
-			movRec.addUser(user.firstName, user.surname, user.age, user.gender, user.job, user.zip);
+			movRec.addUser(user.firstName, user.surname, user.age, user.gender, user.job, user.zip, user.password, user.role);
 		}
 		for(Movie movie : movies){
 			movRec.addMovie(movie.title, movie.releaseDate, movie.imdb);
