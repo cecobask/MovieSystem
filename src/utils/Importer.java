@@ -11,7 +11,7 @@ import models.User;
 // Class used to read the data from users5.dat, items5.dat, ratings5.dat and import it into an ArrayList
 // which is then returned by each method
 public class Importer {
-
+	
 	public List<User> loadUsers(String users) throws Exception {
 		File usersFile = new File(users);
 		In usersIn = new In(usersFile);

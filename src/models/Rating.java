@@ -11,10 +11,10 @@ public class Rating {
 	public long id;
 	public Long userId;
 	public Long movieId;
-	public double rating;
+	public int rating;
 	
 	// Constructor used by Cliche CLI and Importer
-	public Rating(Long userId, Long movieId, double rating) {
+	public Rating(Long userId, Long movieId, int rating) {
 		this.userId = userId;
 		this.movieId = movieId;
 		this.rating = rating;
@@ -50,11 +50,11 @@ public class Rating {
 		this.movieId = movieId;
 	}
 
-	public double getRating() {
+	public int getRating() {
 		return rating;
 	}
 
-	public void setRating(double rating) {
+	public void setRating(int rating) {
 		this.rating = rating;
 	}
 	

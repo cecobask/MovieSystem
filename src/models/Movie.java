@@ -2,9 +2,6 @@ package models;
 
 import static com.google.common.base.MoreObjects.toStringHelper;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.google.common.base.Objects;
 
 // Movie class which contains all the characteristics and a constructor for creating a movie
@@ -15,7 +12,7 @@ public class Movie {
 	public String title;
 	public String releaseDate;
 	public String imdb;
-	public List<Rating> ratings = new ArrayList<Rating>();
+	public int ratings;
 	
 	// Constructor used by Cliche CLI for creating movies and by Importer 
 	public Movie(String title, String releaseDate, String imdb) {
@@ -23,6 +20,14 @@ public class Movie {
 		this.title = title;
 		this.releaseDate = releaseDate;
 		this.imdb = imdb;
+	}
+	
+	public Movie(String title, String releaseDate, String imdb, int ratings) {
+		this.id = counter++;
+		this.title = title;
+		this.releaseDate = releaseDate;
+		this.imdb = imdb;
+		this.ratings=ratings;
 	}
 	
 	@Override
@@ -86,11 +91,11 @@ public class Movie {
 		this.imdb = imdb;
 	}
 
-	public List<Rating> getRatings() {
+	public int getRatings() {
 		return ratings;
 	}
 
-	public void setRatings(List<Rating> ratings) {
+	public void setRatings(int ratings) {
 		this.ratings = ratings;
 	}
 

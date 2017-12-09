@@ -3,14 +3,11 @@ package controllers;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Collection;
 import asg.cliche.Command;
 import asg.cliche.Param;
 import asg.cliche.Shell;
 import asg.cliche.ShellDependent;
 import asg.cliche.ShellFactory;
-import models.Movie;
-import models.Rating;
 import models.User;
 import utils.Serializer;
 import utils.XMLSerializer;
@@ -21,8 +18,6 @@ public class Main implements ShellDependent {
 	private Shell theShell;
 	private static final String ADMIN = "admin";
 	private User user;
-	private Movie movie;
-	private Rating rating;
 
 	public Main() throws Exception{
 		
@@ -41,7 +36,7 @@ public class Main implements ShellDependent {
 		
 		public static void main(String[] args) throws Exception{
 			Main main = new Main();
-			Shell shell = ShellFactory.createConsoleShell("cliche", "Enter '?l' or '?list' to list all commands. If you need help for a command, use '?help' followed by command's name", main);
+			Shell shell = ShellFactory.createConsoleShell("ms", "Enter '?l' or '?list' to list all commands. If you need help for a command, use '?help' followed by command's name", main);
 			shell.commandLoop();
 			main.movRec.write();
 		}
@@ -51,7 +46,7 @@ public class Main implements ShellDependent {
 		      throws IOException {
 
 		    if (movRec.login(userId, password) && movRec.currentUser.isPresent()) {
-		      User user = movRec.currentUser.get();
+		      user = movRec.currentUser.get();
 		      System.out.println("You are logged in with the ID: " + user.userId);
 		      if (user.role!=null && user.role.equals(ADMIN)) {
 		        AdminMenu adminMenu = new AdminMenu(movRec, user.userId);
@@ -63,5 +58,27 @@ public class Main implements ShellDependent {
 		    } else
 		      System.out.println("Unknown username/password.");
 		  }
-	
+		
+		@Command(description="Add a new user")
+		public String addUser(@Param(name="firstName") String firstName,
+							@Param(name="surname") String surname,
+							@Param(name="age") int age,
+							@Param(name="gender") String gender,
+							@Param(name="job") String job,
+							@Param(name="zip") String zip,
+							@Param(name="password") String password,
+							@Param(name="role") String role){
+			user = movRec.addUser(firstName, surname, age, gender, job, zip, password, role);
+			return "\nYou have successfully added user: " + user.firstName;
+		}
+		
+		@Command(description="Initial Load")
+		public String load() throws Exception{
+			movRec.write();
+			movRec.load();
+			movRec.prime();
+			movRec.write();
+			return "Information about users, movies and ratings loaded.";
+		}
+		
 }

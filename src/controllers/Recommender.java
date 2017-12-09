@@ -1,6 +1,7 @@
 package controllers;
 
 import java.util.Collection;
+import java.util.List;
 
 import models.Movie;
 import models.Rating;
@@ -30,10 +31,28 @@ public interface Recommender {
 	
 	public Movie getMovieById(long movieId);
 	
-	public Rating addRating(long userId, long movieId, double rating);
+	public Collection<Movie> sortedByTitle();
+	
+	public List<Movie> getMovieByName(String term);
+	
+	public List<Movie> getTopTenMovies();
+	
+	public Rating addRating(long userId, long movieId, int rating);
+	
+	public double averageMovieRating(long movieId);
 	
 	public Collection<Rating> getRatings();
 	
-	public Rating getRatingsById(long movieId);
+	public Rating getRating(long userId, long movieId);
+	
+	public List<Rating> getUserRatings(long userId);
+	
+	public List<Rating> getAllRatingsForMovie(long movieId);
+	
+	public Rating removeRating(long userId, long movieId);
+	
+	public void logout();
+	
+	public boolean login(long userId, String password);
 	
 }

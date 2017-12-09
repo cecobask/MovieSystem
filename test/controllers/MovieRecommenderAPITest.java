@@ -61,7 +61,7 @@ public class MovieRecommenderAPITest {
 	@Test
 	public void testRating(){
 		assertEquals(ratings.length, movRec.getRatings().size());
-		movRec.addRating(0, 0, 0.0);
+		movRec.addRating(0, 0, 0);
 		assertEquals(ratings.length+1, movRec.getRatings().size());
 	}
 	

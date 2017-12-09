@@ -4,7 +4,6 @@ import static com.google.common.base.MoreObjects.toStringHelper;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.google.common.base.Objects;
 
 // User class which contains all the characteristics and constructors for creating a user
@@ -34,20 +33,23 @@ public class User {
 		this.gender = gender;
 		this.job = job;
 		this.zip = zip;
-		this.password=password;
-		this.role="default";
+		this.password = password;
+		this.role = "default";
 	}
 	
 	// Constructor used when user is being imported by Importer
-	public User(Long userId, String firstName, String surname, int age, String gender, String job, String zip){
-		this.userId = counter++;
-		this.firstName = firstName;
-		this.surname = surname;
-		this.age = age;
-		this.gender	= gender;
-		this.job = job;
-		this.zip= zip;
-	}
+		public User(Long userId, String firstName, String surname, int age, String gender, String job, String zip){
+			this.userId = userId;
+			if(userId >= counter){
+				counter = userId + 1;
+			}
+			this.firstName = firstName;
+			this.surname = surname;
+			this.age = age;
+			this.gender	= gender;
+			this.job = job;
+			this.zip= zip;
+		}
 	
 	public String toString(){
 		return toStringHelper(this).addValue(userId)
@@ -165,5 +167,5 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
+
 }
