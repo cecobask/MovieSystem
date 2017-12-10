@@ -5,9 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import com.google.common.base.Optional;
-
 import models.Fixtures;
 import models.Movie;
 import models.User;

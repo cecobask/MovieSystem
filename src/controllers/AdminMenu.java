@@ -2,7 +2,6 @@ package controllers;
 
 import java.util.Collection;
 import java.util.List;
-
 import asg.cliche.Command;
 import asg.cliche.Param;
 import models.Movie;
@@ -165,7 +164,7 @@ public class AdminMenu {
 			System.out.println(topTenMovies.indexOf(mov) + 1 + ". " + mov.title + ", Score: " + score);
 		}
 	}
-
+	
 	public Long getName() {
 		return userId;
 	}
