@@ -102,12 +102,6 @@ public class DefaultMenu {
 		}
 	}
 
-	@Command(description = "Delete a rating by a user for specific movie(userId, movieId)")
-	public String removeRating(@Param(name = "userId") long userId, @Param(name = "movieId") long movieId) {
-		rating = movRec.removeRating(userId, movieId);
-		return "You successfully removed rating for movie with ID: " + rating.movieId + ", made by user with ID: " + rating.userId;
-	}
-
 	@Command(description = "Average movie rating(movieId)", abbrev="avg")
 	public double averageMovieRating(@Param(name = "movieID") Long movieId) {
 		double average = movRec.averageMovieRating(movieId);

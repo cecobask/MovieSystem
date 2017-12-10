@@ -31,7 +31,7 @@ public class PersistenceTest {
 	public void testEmpty(){
 		movRec = new MovieRecommenderAPI(null);
 		assertEquals(0, movRec.movieIndex.size());
-		assertEquals(0, movRec.ratingIndex.size());
+		assertEquals(0, movRec.ratingsTable.size());
 		assertEquals(0, movRec.userIndex.size());
 		generate(movRec);
 	}
@@ -40,7 +40,7 @@ public class PersistenceTest {
 	public void testGenerate(){
 		movRec = new MovieRecommenderAPI(null);
 		assertEquals(0, movRec.movieIndex.size());
-		assertEquals(0, movRec.ratingIndex.size());
+		assertEquals(0, movRec.ratingsTable.size());
 		assertEquals(0, movRec.userIndex.size());
 		generate(movRec);
 		

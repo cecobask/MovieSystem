@@ -168,9 +168,6 @@ public class MovieRecommenderAPI implements Recommender {
 		Rating rate = new Rating(userId, movieId, rating);
 		rate.id = ratingsTable.size() + 1l;
 
-		Movie mov = getMovieById(movieId);
-		mov.ratings += rating;
-
 		ratingsTable.put(userId, movieId, rate);
 		return rate;
 	}

@@ -9,11 +9,11 @@ public class RatingTest {
 
 		Rating rating0 = new Rating(0l, 0l, 0);
 		Rating rating1 = new Rating(1l, 1l, 1);
-		
+
 		
 		@Test
 		public void testToString(){
-			assertEquals("Rating{0, 0, 0.0}", rating0.toString());
+			assertEquals("Rating{0, 0, 0}", rating0.toString());
 		}
 		
 		@Test

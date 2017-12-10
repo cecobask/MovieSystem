@@ -41,7 +41,7 @@ public class Main implements ShellDependent {
 			main.movRec.write();
 		}
 		
-		@Command(description = "Log in")
+		@Command(description = "Log in(userId, password)")
 		  public void logIn(@Param(name = "userId") Long userId, @Param(name = "password") String password)
 		      throws IOException {
 
@@ -59,7 +59,7 @@ public class Main implements ShellDependent {
 		      System.out.println("Unknown username/password.");
 		  }
 		
-		@Command(description="Add a new user")
+		@Command(description="Add a new user(firstName, surname, age, gender, job, zip, password, role)")
 		public String addUser(@Param(name="firstName") String firstName,
 							@Param(name="surname") String surname,
 							@Param(name="age") int age,
@@ -69,7 +69,7 @@ public class Main implements ShellDependent {
 							@Param(name="password") String password,
 							@Param(name="role") String role){
 			user = movRec.addUser(firstName, surname, age, gender, job, zip, password, role);
-			return "\nYou have successfully added user: " + user.firstName;
+			return "\nYou have successfully added user: " + user.firstName + ", ID: " + user.userId;
 		}
 		
 		@Command(description="Initial Load")

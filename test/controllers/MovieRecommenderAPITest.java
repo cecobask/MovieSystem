@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.google.common.base.Optional;
+
 import models.Fixtures;
 import models.Movie;
 import models.User;
@@ -62,13 +64,13 @@ public class MovieRecommenderAPITest {
 	public void testRating(){
 		assertEquals(ratings.length, movRec.getRatings().size());
 		movRec.addRating(0, 0, 0);
-		assertEquals(ratings.length+1, movRec.getRatings().size());
+		assertEquals(ratings.length, movRec.getRatings().size());
 	}
 	
 	@Test
 	public void testRemoveUser() throws Exception{
 		assertEquals(users.length, movRec.getUsers().size());
-		User damian = movRec.addUser("Damian", "Mamak", 21, "male", "cook", "CL234", "4321", "regular");
+		User damian = movRec.addUser("Damian", "Mamak", 21, "male", "cook", "CL234", "4321", "default");
 		assertEquals(users.length+1, movRec.getUsers().size());
 		movRec.removeUser(4l);
 		assertEquals(users.length, movRec.getUsers().size());

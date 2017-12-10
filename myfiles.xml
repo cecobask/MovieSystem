@@ -178,7 +178,7 @@
                 <title>Twelve Monkeys (1995)</title>
                 <releaseDate>01-Jan-1995</releaseDate>
                 <imdb>http://us.imdb.com/M/title-exact?Twelve%20Monkeys%20(1995)</imdb>
-                <ratings>2</ratings>
+                <ratings>1</ratings>
               </models.Movie>
             </entry>
             <entry>
@@ -209,6 +209,46 @@
                 <releaseDate>22-Jan-1996</releaseDate>
                 <imdb>http://us.imdb.com/M/title-exact?Richard%20III%20(1995)</imdb>
                 <ratings>2</ratings>
+              </models.Movie>
+            </entry>
+            <entry>
+              <long>11</long>
+              <models.Movie>
+                <id>11</id>
+                <title>Trainspotting</title>
+                <releaseDate>23-Feb-1996</releaseDate>
+                <imdb>http://www.imdb.com/title/tt0117951/</imdb>
+                <ratings>4</ratings>
+              </models.Movie>
+            </entry>
+            <entry>
+              <long>12</long>
+              <models.Movie>
+                <id>12</id>
+                <title>The Big Lebowski</title>
+                <releaseDate>24-Apr-1998</releaseDate>
+                <imdb>http://www.imdb.com/title/tt0118715/</imdb>
+                <ratings>4</ratings>
+              </models.Movie>
+            </entry>
+            <entry>
+              <long>13</long>
+              <models.Movie>
+                <id>13</id>
+                <title>Lock, Stock and Two Smoking Barrels</title>
+                <releaseDate>28-Aug-1998</releaseDate>
+                <imdb>http://www.imdb.com/title/tt0120735/</imdb>
+                <ratings>2</ratings>
+              </models.Movie>
+            </entry>
+            <entry>
+              <long>14</long>
+              <models.Movie>
+                <id>14</id>
+                <title>T2 Trainspotting</title>
+                <releaseDate>27-Jan-2017</releaseDate>
+                <imdb>http://www.imdb.com/title/tt2763304/</imdb>
+                <ratings>4</ratings>
               </models.Movie>
             </entry>
           </map>
@@ -600,16 +640,91 @@
                 </map>
               </entry>
               <entry>
+                <long>6</long>
+                <map>
+                  <entry>
+                    <long>11</long>
+                    <models.Rating>
+                      <counter>1</counter>
+                      <id>38</id>
+                      <userId>6</userId>
+                      <movieId>11</movieId>
+                      <rating>5</rating>
+                    </models.Rating>
+                  </entry>
+                  <entry>
+                    <long>12</long>
+                    <models.Rating>
+                      <counter>1</counter>
+                      <id>39</id>
+                      <userId>6</userId>
+                      <movieId>12</movieId>
+                      <rating>4</rating>
+                    </models.Rating>
+                  </entry>
+                  <entry>
+                    <long>13</long>
+                    <models.Rating>
+                      <counter>1</counter>
+                      <id>40</id>
+                      <userId>6</userId>
+                      <movieId>13</movieId>
+                      <rating>3</rating>
+                    </models.Rating>
+                  </entry>
+                  <entry>
+                    <long>14</long>
+                    <models.Rating>
+                      <counter>1</counter>
+                      <id>41</id>
+                      <userId>6</userId>
+                      <movieId>14</movieId>
+                      <rating>4</rating>
+                    </models.Rating>
+                  </entry>
+                </map>
+              </entry>
+              <entry>
                 <long>7</long>
                 <map>
                   <entry>
-                    <long>7</long>
+                    <long>11</long>
                     <models.Rating>
                       <counter>1</counter>
-                      <id>37</id>
+                      <id>42</id>
                       <userId>7</userId>
-                      <movieId>7</movieId>
-                      <rating>7</rating>
+                      <movieId>11</movieId>
+                      <rating>3</rating>
+                    </models.Rating>
+                  </entry>
+                  <entry>
+                    <long>12</long>
+                    <models.Rating>
+                      <counter>1</counter>
+                      <id>43</id>
+                      <userId>7</userId>
+                      <movieId>12</movieId>
+                      <rating>4</rating>
+                    </models.Rating>
+                  </entry>
+                  <entry>
+                    <long>13</long>
+                    <models.Rating>
+                      <counter>1</counter>
+                      <id>44</id>
+                      <userId>7</userId>
+                      <movieId>13</movieId>
+                      <rating>2</rating>
+                    </models.Rating>
+                  </entry>
+                  <entry>
+                    <long>14</long>
+                    <models.Rating>
+                      <counter>1</counter>
+                      <id>45</id>
+                      <userId>7</userId>
+                      <movieId>14</movieId>
+                      <rating>5</rating>
                     </models.Rating>
                   </entry>
                 </map>

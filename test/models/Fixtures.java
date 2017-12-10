@@ -21,9 +21,9 @@ public class Fixtures {
 	};
 	
 	public static Rating[] ratings ={
-			new Rating(0l, 0l, 2.0),
-			new Rating(1l, 1l, 3.0),
-			new Rating(2l, 2l, 4.0),
-			new Rating(4l, 4l, 4.0)
+			new Rating(0l, 0l, 2),
+			new Rating(1l, 1l, 3),
+			new Rating(2l, 2l, 4),
+			new Rating(4l, 4l, 4)
 	};
 }
